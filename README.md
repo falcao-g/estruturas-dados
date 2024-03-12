@@ -18,8 +18,9 @@
 Este repositório contém os códigos-fonte desenvolvidos durante a disciplina de Estruturas de Dados.
 
 Esta matéria trabalha primordialmente com a linguagem C, abordando conceitos e tópicos como:
-    - Memória
-    - Ponteiros
-    - Recursividade
-    - Lista de Prioridade
-    - Árvores
+
+- Memória
+- Ponteiros
+- Recursividade
+- Lista de Prioridade
+- Árvores
