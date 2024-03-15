@@ -158,15 +158,14 @@ void testa_constroi_heap(void) {
 }
 
 int insere_elemento(int v[], int *tam, int max, int valor) {
-    int tet = EXIT_SUCCESS;
-    if (*tam == max) {
-        tet = EXIT_FAILURE;
-    } else {
-        v[*tam] = valor;
-        sobe(v, *tam);
-        *tam += 1;
-    }
-    return tet;
+    if (*tam == max)
+        return EXIT_FAILURE;
+
+    v[*tam] = valor;
+    sobe(v, *tam);
+    *tam += 1;
+
+    return EXIT_SUCCESS;
 }
 
 void testa_insere_elemento(void) {
@@ -268,6 +267,38 @@ void testa_altera_prioridade(void) {
     assert_vetor(vetor4, esperado4, 7);
 }
 
+void heap_sort(int v[], int tam) {
+    for (int i = tam - 1; i > 0; i--) {
+        troca(&v[0], &v[i]);
+        desce(v, i, 0);
+    }
+}
+
+void testa_heapsort(void) {
+    int vetor[3] = {10, 9, 8};
+    int esperado[3] = {8, 9, 10};
+    heap_sort(vetor, 3);
+    assert_vetor(vetor, esperado, 3);
+
+    int vetor2[7] = {100, 87, 69, 43, 35, 34, 23};
+    int esperado2[7] = {23, 34, 35, 43, 69, 87, 100};
+    heap_sort(vetor2, 7);
+    assert_vetor(vetor2, esperado2, 7);
+
+    int vetor3[15] = {15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+    int esperado3[15] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+    heap_sort(vetor3, 15);
+    assert_vetor(vetor3, esperado3, 15);
+
+    int vetor4[2] = {2, 1};
+    int esperado4[2] = {1, 2};
+    heap_sort(vetor4, 2);
+    assert_vetor(vetor4, esperado4, 2);
+
+    int vetor5[1] = {3};
+    heap_sort(vetor5, 1);
+}
+
 int main(void) {
     // Roda os testes para garantir que as funções estão corretas
     testa_pai();
@@ -279,6 +310,7 @@ int main(void) {
     testa_insere_elemento();
     testa_extrai_max();
     testa_altera_prioridade();
+    testa_heapsort();
 
     return EXIT_SUCCESS;
 }
