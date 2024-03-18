@@ -202,7 +202,6 @@ void testa_insere_elemento(void) {
 
 int extrai_max(int v[], int *tam) {
     int max = v[0];
-    max = v[0];
     *tam -= 1;
     v[0] = v[*tam];
     desce(v, *tam, 0);
