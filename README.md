@@ -24,3 +24,5 @@ Esta matéria trabalha primordialmente com a linguagem C, abordando conceitos e 
 - Recursividade
 - Lista de Prioridade
 - Árvores
+- Tabelas Hash
+- Construção de bibliotecas
