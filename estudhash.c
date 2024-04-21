@@ -36,9 +36,11 @@ int h(char* key) {
 	return total;
 }
 
+// os comentários representam o que mudaria para ser um double hash
 int insere(thash* hash, char* key) {
 	int cod = h(key);
 	int pos = cod % hash->max;
+	// int i = 0;
 
 	if (hash->max == (hash->size + 1)) {
 		return EXIT_FAILURE;
@@ -46,6 +48,8 @@ int insere(thash* hash, char* key) {
 	
 	while (hash->tabela[pos].key[0] != '\0' && strcmp(hash->tabela[pos].key, "*") != 0) {
 		pos = (pos + 1) % hash->max;
+		//pos = (cod + i * cod) % hash->max;
+		//i += 1;
 	}
 
 	strcpy(hash->tabela[pos].key, key);
@@ -55,9 +59,11 @@ int insere(thash* hash, char* key) {
 	return EXIT_SUCCESS;
 }
 
+// aqui também, comentários == double hash
 int remove_elemento(thash* hash, char* key) {
 	int cod = h(key);
 	int pos = cod % hash->max;
+	// int i = 0;
 
 	while (hash->tabela[pos].key[0] != '\0') {
 		if (strcmp(hash->tabela[pos].key, key) == 0) {
@@ -66,13 +72,18 @@ int remove_elemento(thash* hash, char* key) {
 			return EXIT_SUCCESS;
 		}
 		pos = (pos + 1) % hash->max;
+		//pos = (cod + i * cod) % hash->max;
+		//i += 1;
 	}
 	return EXIT_FAILURE;
 }
 
+// mesma coisa, se você descomentar e tirar o outro cálculo do pos
+// vira double hash
 int busca(thash* hash, char* key) {
 	int cod = h(key);
 	int pos = cod % hash->max;
+	// int i = 0;
 
 	while(hash->tabela[pos].key[0] != '\0') {
 		if(strcmp(hash->tabela[pos].key, key) == 0) {
@@ -80,6 +91,8 @@ int busca(thash* hash, char* key) {
 		}
 
 		pos = (pos + 1) % hash->max;
+		//pos = (cod + i * cod) % hash->max;
+		//i += 1;
 	}
 	return EXIT_FAILURE;
 }
