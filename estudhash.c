@@ -15,14 +15,9 @@ typedef struct {
 } thash;
 
 void inicializa(thash* hash, int nbuckets) {
-	hash->tabela = calloc(sizeof(elemento *), nbuckets + 1);
+	hash->tabela = malloc(sizeof(elemento *) * nbuckets + 1);
 	hash->max = nbuckets + 1;
 	hash->size = 0;
-
-	for (int i = 0; i < nbuckets; i++) {
-		hash->tabela[i].key[0] = '\0';
-		hash->tabela[i].valor[0] = '\0'; // assumindo que valores não podem ser 0.
-	}
 }
 
 int h(char* key) {
