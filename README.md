@@ -22,7 +22,7 @@ Esta matéria trabalha primordialmente com a linguagem C, abordando conceitos e 
 - Memória
 - Ponteiros
 - Recursividade
-- Lista de Prioridade
-- Árvores
-- Tabelas Hash
+- Heap
 - Construção de bibliotecas
+- Tabelas Hash
+- Árvores ABB, AVL
