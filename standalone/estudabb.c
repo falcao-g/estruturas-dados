@@ -51,6 +51,30 @@ elemento* abb_busca(tarv * parv, int reg) {
     return abb_busca_node(parv, parv->raiz, reg);
 }
 
+void preordem(elemento ** ppnode) {
+	if (*ppnode != NULL) {
+		printf("%d ", (*ppnode)->reg);
+		preordem(&((*ppnode)->esq));
+		preordem(&((*ppnode)->dir));
+	}
+}
+
+void inordem(elemento ** ppnode) {
+	if (*ppnode != NULL) {
+		inordem(&((*ppnode)->esq));
+		printf("%d ", (*ppnode)->reg);
+		inordem(&((*ppnode)->dir));
+	}
+}
+
+void posordem(elemento ** ppnode) {
+	if (*ppnode != NULL) {
+		posordem(&((*ppnode)->esq));
+		posordem(&((*ppnode)->dir));
+		printf("%d ", (*ppnode)->reg);
+	}
+}
+
 int main(void) {
 	tarv abb;
 	abb_constroi(&abb);
@@ -80,6 +104,13 @@ int main(void) {
 
 	abb_insere(&abb, 19);
 	printf("%d \n", abb.raiz->dir->dir->esq->dir->reg);
+
+	preordem(&abb);
+	printf("\n");
+	inordem(&abb);
+	printf("\n");
+	posordem(&abb);
+	printf("\n");
 
 	elemento * no;
 	no = abb_busca(&abb, 55);
