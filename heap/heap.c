@@ -26,7 +26,7 @@ int acessa_max(int v[]) {
 }
 
 int pai(int n) {
-    return ((n - 1) / 2);
+    return (n - 1) / 2;
 }
 
 void testa_pai(void) {
@@ -38,7 +38,7 @@ void testa_pai(void) {
 }
 
 int filho_esq(int n) {
-    return (n * 2 + 1);
+    return n * 2 + 1;
 }
 
 void testa_filho_esq(void) {
@@ -50,7 +50,7 @@ void testa_filho_esq(void) {
 }
 
 int filho_dir(int n) {
-    return (n * 2 + 2);
+    return n * 2 + 2;
 }
 
 void testa_filho_dir(void) {
