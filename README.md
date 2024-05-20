@@ -9,7 +9,7 @@
 
 - **Disciplina**: Estruturas de Dados
 - **Período**: 2024/1
-- **Professora**: [Edson Takashi Matsubara](http://lattes.cnpq.br/1842905075999080)
+- **Professor**: [Edson Takashi Matsubara](http://lattes.cnpq.br/1842905075999080)
 - **Curso**: Ciência da Computação
 - **Universidade**: Universidade Federal de Mato Grosso do Sul ([UFMS](https://www.ufms.br/))
 
