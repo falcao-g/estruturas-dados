@@ -15,7 +15,6 @@ void remove_chave(tnode *x, tchave ik) {
 }
 
 tchave sucessor(tnode *x, tchave k) {
-    printf("entrou");
     int ik;
     tnode *aux;
     ik = procura_chave(x, k);
@@ -27,7 +26,6 @@ tchave sucessor(tnode *x, tchave k) {
 }
 
 tchave predecessor(tnode *x, tchave k) {
-    printf("entrou2 \n");
     int ik;
     tnode *aux;
     ik = procura_chave(x, k);
